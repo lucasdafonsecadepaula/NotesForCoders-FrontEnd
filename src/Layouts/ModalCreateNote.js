@@ -61,7 +61,7 @@ export default function ModalCreateNote() {
     setDisableButton(true);
     axios
       .post(
-        `http://localhost:8000/auth/create-note`,
+        `${process.env.URL_CREATE_NOTE}`,
         {
           avatar: avatar,
           title: title,

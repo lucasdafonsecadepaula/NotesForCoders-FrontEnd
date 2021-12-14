@@ -104,7 +104,7 @@ export default function Home({ notes }) {
 
 export async function getServerSideProps(context) {
   const notes = await axios
-    .get("http://localhost:8000/notes")
+    .get(`${process.env.URL_GET_NOTES}`)
     .then(function (response) {
       return response.data;
     })
@@ -119,7 +119,7 @@ export async function getServerSideProps(context) {
 
 const verifyToken = async (response) => {
   axios
-    .get(`http://localhost:8000/auth/verifytoken`, {
+    .get(`${process.env.URL_VERIFY_TOKEN}`, {
       headers: {
         Authorization: `Bearer ${response}`,
       },

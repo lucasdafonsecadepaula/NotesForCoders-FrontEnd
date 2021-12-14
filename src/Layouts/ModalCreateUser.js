@@ -39,7 +39,7 @@ export default function ModalCreateUser() {
     }
 
     await axios
-      .post(`${process.env.URL_CREATE_ACOUNT}`, {
+      .post(`${process.env.URL_API_AUTH}/create-acount`, {
         name: nameRef.current.value,
         email: emailRef.current.value.toLowerCase(),
         password: passwordRef.current.value,

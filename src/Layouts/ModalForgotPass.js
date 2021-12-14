@@ -28,7 +28,7 @@ export default function ModalForgotPass() {
     setError();
     setDisableButton(true);
     await axios
-      .post(`${process.env.URL_API_AUTH}/forgot-password`, {
+      .post(process.env.URL_API_AUTH_FORGOT_PASSWORD, {
         email: emailRef.current.value.toLowerCase(),
       })
       .then(function (response) {

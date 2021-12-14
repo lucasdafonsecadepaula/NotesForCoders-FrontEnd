@@ -28,7 +28,7 @@ export default function token_verify() {
     }
 
     axios
-      .post(`${process.env.URL_API_AUTH}/forgot-password-verify-token`, {
+      .post(process.env.URL_API_AUTH_FORGOT_PASSWORD_VERIFY_TOKEN, {
         token,
         password: passwordRef.current.value,
       })

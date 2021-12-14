@@ -119,7 +119,7 @@ export async function getServerSideProps(context) {
 
 const verifyToken = async (response) => {
   axios
-    .get(`${process.env.URL_API_AUTH}/verifytoken`, {
+    .get(process.env.URL_API_AUTH_VERIFY_TOKEN, {
       headers: {
         Authorization: `Bearer ${response}`,
       },

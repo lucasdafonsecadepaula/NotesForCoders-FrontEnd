@@ -28,9 +28,13 @@ export default function ModalAccessAcount() {
 
   const singIn = async () => {
     setDisableButton(true);
-    const test = `${process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT}`
+
+    console.log(process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT)
+    console.log(`${process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT}`)
+
+
     await axios
-      .post(test, {
+      .post(`${process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT}`, {
         email: emailRef.current.value.toLowerCase(),
         password: passwordRef.current.value,
       })

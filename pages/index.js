@@ -103,6 +103,7 @@ export default function Home({ notes }) {
 }
 
 export async function getServerSideProps(context) {
+
   const notes = await axios
     .get(`${process.env.NEXT_PUBLIC_URL_API_GET_NOTES}`)
     .then(function (response) {

@@ -31,6 +31,7 @@ export default function ModalAccessAcount() {
 
     console.log(process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT)
     console.log(`${process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT}`)
+    console.log(`${process.env.NEXT_PUBLIC_URL_API_GET_NOTES}`)
 
 
     await axios

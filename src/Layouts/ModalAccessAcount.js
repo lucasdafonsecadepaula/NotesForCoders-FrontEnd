@@ -28,8 +28,9 @@ export default function ModalAccessAcount() {
 
   const singIn = async () => {
     setDisableButton(true);
+    const test = `${process.env.NEXT_PUBLIC_URL_API_AUTH_ACCESS_ACOUNT}`
     await axios
-      .post(process.env.URL_API_AUTH_ACCESS_ACOUNT, {
+      .post(test, {
         email: emailRef.current.value.toLowerCase(),
         password: passwordRef.current.value,
       })
@@ -55,6 +56,7 @@ export default function ModalAccessAcount() {
         setBlockScroll({});
       })
       .catch(function (error) {});
+    setDisableButton(false)
   };
 
   return (

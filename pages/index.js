@@ -104,7 +104,7 @@ export default function Home({ notes }) {
 
 export async function getServerSideProps(context) {
   const notes = await axios
-    .get(`${process.env.URL_API_GET_NOTES}`)
+    .get(`${process.env.NEXT_PUBLIC_URL_API_GET_NOTES}`)
     .then(function (response) {
       return response.data;
     })
@@ -119,7 +119,7 @@ export async function getServerSideProps(context) {
 
 const verifyToken = async (response) => {
   axios
-    .get(process.env.URL_API_AUTH_VERIFY_TOKEN, {
+    .get(process.env.NEXT_PUBLIC_URL_API_AUTH_VERIFY_TOKEN, {
       headers: {
         Authorization: `Bearer ${response}`,
       },

@@ -10,8 +10,12 @@ import Notes from "../src/Layouts/Notes";
 import axios from "axios";
 import { NotesContext } from "../src/Providers/NotesContext";
 import { UserContext } from "../src/Providers/UserContext";
+import Snackbar from '@mui/material/Snackbar';
+import Slide from '@mui/material/Slide';
 
 export default function Home({ notes }) {
+  const [openSnackbar, setOpenSnackbar] = useState(true);
+
   const { setNotes } = useContext(NotesContext);
 
   const { modalStatus, setModalStatus, blockScroll, setBlockScroll } =
@@ -42,6 +46,15 @@ export default function Home({ notes }) {
       {modalStatus == "create-acount" ? <ModalCreateUser /> : null}
       {modalStatus == "forgot-pass" ? <ModalForgotPass /> : null}
       {modalStatus == "create-note" ? <ModalCreateNote /> : null}
+
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={9000}
+        TransitionComponent={(props) => <Slide {...props} direction="up" />}
+        onClose={() => setOpenSnackbar(false)}
+        message={"Caros, Devs, favor testar as funções do backend como a criação de uma conta, redefinição de senha e a criação de um novo note!!"}
+        action={""}
+      />
 
       <nav className={styles.nav}>
         <Avatar src="/avatar.png" />

@@ -8,34 +8,38 @@ export default function Notes() {
 
   return (
     <>
-      {notes.map((e) => (
-        <a key={e._id} className={styles.notes}>
-          <Avatar
-            src={e.avatar}
-            style={{
-              backgroundColor: "#82ACEF",
-              height: "100px",
-              width: "100px",
-            }}
-          ></Avatar>
-
-          <div className={styles.notesDiv}>
-            <h3 style={{ height: "0px", lineHeight: "0px" }}>{e.title}</h3>
-            <p
+      {notes.length ? (
+        notes.map((e) => (
+          <a key={e._id} className={styles.notes}>
+            <Avatar
+              src={e.avatar}
               style={{
-                fontStyle: "italic",
-                borderTop: "1px solid #ffff",
-                height: "100%",
-                width: "100%",
-                marginLeft: "10px",
-                marginRight: "10px",
+                backgroundColor: "#82ACEF",
+                height: "100px",
+                width: "100px",
               }}
-            >
-              {e.description}
-            </p>
-          </div>
-        </a>
-      ))}
+            ></Avatar>
+
+            <div className={styles.notesDiv}>
+              <h3 style={{ height: "0px", lineHeight: "0px" }}>{e.title}</h3>
+              <p
+                style={{
+                  fontStyle: "italic",
+                  borderTop: "1px solid #ffff",
+                  height: "100%",
+                  width: "100%",
+                  marginLeft: "10px",
+                  marginRight: "10px",
+                }}
+              >
+                {e.description}
+              </p>
+            </div>
+          </a>
+        ))
+      ) : (
+        <div className={styles.ldsring}><div></div><div></div><div></div><div></div></div>
+      )}
     </>
   );
 }

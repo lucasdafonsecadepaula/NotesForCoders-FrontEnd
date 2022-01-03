@@ -13,17 +13,16 @@ import { UserContext } from "../src/Providers/UserContext";
 import Snackbar from '@mui/material/Snackbar';
 import Slide from '@mui/material/Slide';
 
-export default function Home({ notes }) {
+export default function Home() {
   const [openSnackbar, setOpenSnackbar] = useState(true);
 
-  const { setNotes } = useContext(NotesContext);
+  const { notes, setNotes } = useContext(NotesContext);
 
   const { modalStatus, setModalStatus, blockScroll, setBlockScroll } =
     useContext(ModalContext);
   const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    setNotes(notes);
     if (localStorage.getItem("user") !== null) {
       const parse = JSON.parse(localStorage.getItem("user"));
       verifyToken(parse.token);
@@ -113,22 +112,6 @@ export default function Home({ notes }) {
       </footer>
     </div>
   );
-}
-
-export async function getServerSideProps(context) {
-
-  const notes = await axios
-    .get(`${process.env.NEXT_PUBLIC_URL_API_GET_NOTES}`)
-    .then(function (response) {
-      return response.data;
-    })
-    .catch(function (error) {
-      return [];
-    });
-
-  return {
-    props: { notes },
-  };
 }
 
 const verifyToken = async (response) => {

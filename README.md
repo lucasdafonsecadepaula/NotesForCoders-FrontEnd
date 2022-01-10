@@ -5,11 +5,3 @@
   <br>
   <a href="https://notesforcoders.vercel.app/">https://notesforcoders.vercel.app//</a>
 </h1>
-
-
-
-  Movie Night - Unid Challenger
-  <br>
-  <br>
-  <a href="https://unid-desafio.vercel.app/">https://unid-desafio.vercel.app/</a>
-</h1>

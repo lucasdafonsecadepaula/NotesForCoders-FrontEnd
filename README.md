@@ -1,5 +1,5 @@
-<h1 align="center">
 ![logo](https://raw.githubusercontent.com/lucasdafonsecadepaula/NotesForCoders-FrontEnd/main/public/favicon-32x32.png)
+<h1 align="center">
 <br>
   Note For Coders
   <br>
